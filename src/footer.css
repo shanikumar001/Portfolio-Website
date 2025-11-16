@@ -1,0 +1,76 @@
+.footer-container {
+  height: 60vh;
+  background: linear-gradient(135deg,#000000,#000000,#473838);
+  backdrop-filter: blur(100px);
+  border-radius: 25px;
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 20vh;
+  margin-top: 10vh;
+  animation: slideS ease forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 60%;
+}
+
+.footer-heading {
+  color: #d67777;
+  font-size: 1.5rem;
+  margin: 0 0 20px 0;
+}
+
+.footer-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  color: #7b5d5d;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: #d67777;
+  transition: all 0.5s, color 0.3s;
+  cursor: pointer;
+}
+
+.footer-icon-link:hover {
+  background-color: hwb(0 20% 71%);
+  color: black;
+  transform: scale(1.2);
+}
+@keyframes iconBig{
+  from{
+    transform: scale(1);
+    
+  }
+  to{
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+.footer-icon-link i {
+  pointer-events: none;
+  display: flex;
+}
+
+i img{
+  height: 20px;
+}

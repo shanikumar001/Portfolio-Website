@@ -1,0 +1,25 @@
+/* Container */
+.storyboard-container {
+  /* border: 2px solid white; */
+  min-height: 20vh;
+  width: 95%;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  overflow-y: auto;
+  border-radius: 15px;
+  padding: 20px;
+  background: transparent; /* dark bg for contrast */
+}
+.project-title{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.project-rivew{
+  width: 100%;
+  margin-top: 50px;
+  display: grid;
+  justify-content: center;
+}
