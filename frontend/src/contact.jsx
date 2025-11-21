@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
-import "./Contact.css";
+import "./contact.css";
 // import Navbar from './App';
 import { Link } from "react-router-dom";
 import Navbar from './nav';
