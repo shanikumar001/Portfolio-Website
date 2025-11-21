@@ -20,27 +20,30 @@ export default function ContactPage() {
     return errs;
   }
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-    const v = validate();
-    setErrors(v);
-    if (Object.keys(v).length) return;
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setStatus("sending");
 
-    try {
-      setStatus("sending");
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (res.ok) {
-        setStatus("success");
-        setForm({ name: "", email: "", subject: "", message: "" });
-      } else setStatus("error");
-    } catch {
+  try {
+    const response = await fetch("http://localhost:3000/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      setStatus("success");
+      setForm({ name: "", email: "", subject: "", message: "" });
+    } else {
       setStatus("error");
     }
+  } catch (err) {
+    setStatus("error");
   }
+};
+
 
   return (
     <>
@@ -130,9 +133,9 @@ export default function ContactPage() {
         </main>
       </div>
               {/* Call To Action */}
-        <div className="cta-section">
+        <div className="cta-section mb-30">
           <h2 className="cta-text">Let Me Get You A Beautiful Website.</h2>
-          <a className="cta-btn">Hire Me ➤</a>
+          <a className="cta-btn">Click here ➤</a>
         </div>
     </div>
     </>
